@@ -1,0 +1,19 @@
+@startuml
+autonumber
+
+title pop的订单支付完成流程
+
+activate 计佣系统
+
+计佣系统-->联盟:每半个小时根据下单时间查询支付完成订单
+
+计佣系统-->计佣系统:按订单分组
+
+计佣系统-->计佣系统:存储订单
+
+计佣系统-->]:发MQ计算分佣（订单、skuList、佣金）
+
+deactivate 计佣系统
+
+
+@enduml

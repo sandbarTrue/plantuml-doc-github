@@ -1,0 +1,19 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_component.puml
+' uncomment the following line and comment the first to use locally
+'!include c4_component.puml
+
+System_Boundary(b1, "计佣系统") {
+
+       Component(7fdiingda,"7fresh订单处理","7fresh订单处理")
+       Component(lmdd,"联盟订单处理","联盟订单处理")
+        Container_Boundary(ecyjcl,"二次分佣佣金处理"){
+         Component(ecfyjs,"二次分佣计算处理","二次分佣计算处理")
+         Component(ecfyty,"二次分佣退佣处理","二次分佣退佣处理")
+         Component(ecfytuiy,"二次分佣推佣处理","二次分佣推佣处理")
+        }
+    Rel(ecyjcl,7fdiingda,"获取数据")
+    Rel(ecyjcl,lmdd,"获取数据")
+
+}
+@enduml

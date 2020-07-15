@@ -1,0 +1,17 @@
+@startuml
+autonumber
+
+title pop的订单失效流程
+
+activate 计佣系统
+
+计佣系统--> 联盟: 根据更新时间去查询订单
+
+计佣系统-->计佣系统:判断是不是失效状态
+
+计佣系统-->]:Mq订单失效来源 联盟
+
+deactivate 计佣系统
+
+
+@enduml

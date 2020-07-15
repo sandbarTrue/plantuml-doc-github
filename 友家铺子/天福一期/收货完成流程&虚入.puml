@@ -1,0 +1,18 @@
+@startuml
+autonumber
+
+title 收货完成流程&虚入
+
+activate 生产中心
+
+生产中心--> 生产中心: MQ 团长全部收货完成
+
+alt 是商户生产单
+    return 直接返回
+end
+
+生产中心--> dws: 虚入
+
+deactivate 生产中心
+
+@enduml

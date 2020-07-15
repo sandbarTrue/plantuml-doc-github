@@ -1,0 +1,17 @@
+@startuml
+autonumber
+
+title 推送数据流程
+
+activate 计佣系统
+
+[--> 计佣系统: 监听订单完成推送数据的消息
+
+计佣系统-->佣金提现系统:推送个人数据
+
+计佣系统-->结算系统:推送商户数据
+
+deactivate 计佣系统
+
+
+@enduml

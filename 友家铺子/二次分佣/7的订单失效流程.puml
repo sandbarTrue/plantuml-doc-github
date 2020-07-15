@@ -1,0 +1,15 @@
+@startuml
+autonumber
+
+title 7的订单失效流程
+
+activate 计佣系统
+
+订单系统--> 计佣系统: 监听订单取消的消息
+
+计佣系统-->]:Mq订单失效 来源7fresh  以后这边可能要识别订单是不是来自天福
+
+deactivate 计佣系统
+
+
+@enduml

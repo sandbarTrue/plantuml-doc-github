@@ -1,0 +1,27 @@
+@startuml
+autonumber
+
+title 生产单创建流程
+
+activate 生产中心
+
+友家铺子worker--> 生产中心: 监听成团消息（租户10的消息，里面有平台id）
+
+生产中心-->友家铺子:查询团下面的sku信息，包含关联skuId信息
+
+note left
+查租户10的sku信息
+end note
+
+生产中心-->生产中心:创建生产单
+
+生产中心-->生产中心:采购调拨
+
+alt 平台Id不为空
+
+    生产中心-->]:MQ 创建商户生产单
+end
+
+deactivate 生产中心
+
+@enduml

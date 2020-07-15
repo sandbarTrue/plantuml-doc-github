@@ -1,0 +1,18 @@
+@startuml
+autonumber
+
+title 商户收货流程
+
+activate 生产中心
+
+生产中心worker --> 生产中心worker: 判断是否需要补货、计算补货数量、创建补货批次
+
+生产中心worker--> 生产中心: 采购调拨
+
+
+alt 关联的租户Id不为空
+    生产中心worker--> 生产中心: 同步补货数据 事件是补货
+end
+deactivate 生产中心
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+autonumber
+
+title 商户收货流程
+
+activate 生产中心
+
+生产中心--> 生产中心: 组装商户收货信息
+
+生产中心--> 生产中心: 调用收货接口收货
+
+deactivate 生产中心
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+autonumber
+
+title 收货流程
+
+activate 生产中心
+
+小程序--> 生产中心: 团长收货
+
+生产中心-->生产中心:收货 修改数据状态
+
+生产中心-->生产中心: 发MQ收货
+
+alt 是商户团
+
+    生产中心-->]:MQ 把AO单告诉商户，让商户收货
+end
+note left
+触发商户收货
+end note
+
+deactivate 生产中心
+
+@enduml

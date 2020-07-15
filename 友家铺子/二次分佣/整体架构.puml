@@ -1,0 +1,23 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/xuanye/plantuml-style-c4/master/c4_component.puml
+' uncomment the following line and comment the first to use locally
+'!include c4_component.puml
+
+
+System(jyxt,"计佣系统")
+System_Ext(lmmdd,"联盟订单")
+System_Ext(7fdd,"7fresh订单系统")
+System_Ext(7foas,"7f订单金额拆分")
+System_Ext(7fsh,"7f售后")
+System_Ext(yjpzwg,"友家铺子网关")
+System_Ext(yjtx,"佣金提现系统")
+System_Ext(cwjf,"7f财务计费系统")
+
+Rel(jyxt,lmmdd,"查询订单和佣金信息")
+Rel(7fdd,jyxt,"通知订单的变更")
+Rel(jyxt,7foas,"查询金额拆分")
+Rel(7fsh,jyxt,"通知售后的信息")
+Rel(yjpzwg,jyxt,"查询佣金信息")
+Rel(jyxt,yjtx,"推送个人团长的佣金")
+Rel(jyxt,cwjf,"推送商户团长的佣金")
+@enduml

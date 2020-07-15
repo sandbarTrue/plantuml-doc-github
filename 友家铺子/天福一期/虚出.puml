@@ -1,0 +1,19 @@
+@startuml
+autonumber
+
+title 虚出流程
+
+activate 生产中心
+
+订单中心--> 生产中心: 订单核销完成
+
+alt 对应的生产单是商户生产单
+
+    return 直接返回
+end
+
+生产中心--> opc: 虚出
+
+deactivate 生产中心
+
+@enduml

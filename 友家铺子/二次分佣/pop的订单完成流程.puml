@@ -1,0 +1,15 @@
+@startuml
+autonumber
+
+title pop的订单完成流程
+
+activate 计佣系统
+
+计佣系统-->联盟:每半个小时根据完成时间查询完成订单
+
+计佣系统-->]:Mq订单完成推送数据 来源pop
+
+deactivate 计佣系统
+
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+autonumber
+
+title 订单失效流程
+
+activate 计佣系统
+
+[--> 计佣系统: 监听订单失效的消息
+
+计佣系统-->计佣系统:更新订单状态，更新佣金状态
+
+deactivate 计佣系统
+
+
+@enduml
